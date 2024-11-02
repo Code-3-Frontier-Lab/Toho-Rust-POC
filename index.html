@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Toho In Rust</title>
+    <style>
+        html,
+        body,
+        canvas {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            background: black;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="glcanvas" tabindex='1'></canvas>
+    <!-- Minified and statically hosted version of https://github.com/not-fl3/macroquad/blob/master/js/mq_js_bundle.js -->
+    <script src="./mq_js_bundle.js"></script>
+    <script>load("./toho-in-rust.wasm");</script> <!-- Your compiled wasm file -->
+
+    <script>
+        if (navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/webOS/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/iPad/i) ||
+            navigator.userAgent.match(/iPod/i) ||
+            navigator.userAgent.match(/BlackBerry/i) ||
+            navigator.userAgent.match(/Windows Phone/i)) {
+            alert("由于我很懒没有设计虚拟按键, 因此这个页面无法在移动端运行, 就算运行了你也操作不了. 换个电脑再来访问吧~");
+        }
+    </script>
+</body>
+
+</html>
